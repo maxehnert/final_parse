@@ -1,0 +1,21 @@
+<div class="tab-content profile-form">
+  <form ng-submit="profile(mech)" ng-controller='ProfileCtrl'>
+
+    <input type="text" ng-model='mech.name' placeholder='Name' class="form-control"><br>
+
+    <input type="email" ng-model='mech.email' placeholder='Email' class="form-control"><br>
+
+    <input type="text" ng-model='mech.specialty' placeholder='specialty' class="form-control"><br>
+
+    <input type="number" ng-model='mech.exp' placeholder='years of exp' class="form-control"><br>
+
+    <input type="checkbox" ng-model='mech.travel' placeholder='Yes I travel' class="form-control"><br>
+
+    <input type="checkbox" ng-model='mech.shop' placeholder='Yes I can service at my home' class="form-control"><br>
+
+    <input type="number" ng-model='mech.location' placeholder='enter zip code of service area' class="form-control"><br>
+
+    <input type="textarea" ng-model='mech.bio' placeholder='Tell us a breif bio' class="form-control"><br>
+
+    <input type="submit" class="btn btn-primary" value="Save"/>
+  </form>

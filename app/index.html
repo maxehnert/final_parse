@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>final_parse</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss" />
+
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body ng-app='myApp'>
+
+    <div ng-include="'scripts/navigation/nav.html'"></div>
+    <div class="hero-unit">
+
+
+      <div ng-view=''></div>
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <script src="scripts/users/user_controller.js"></script>
+        <script src="scripts/users/user_factory.js"></script>
+        <script src="scripts/navigation/nav_controller.js"></script>
+        <script src="scripts/profile/profile_controller.js"></script>
+        <script src="scripts/profile/profile_factory.js"></script>
+
+        <!-- endbuild -->
+</body>
+</html>
