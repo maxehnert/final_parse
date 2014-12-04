@@ -1,23 +1,28 @@
 (function () {
 
   angular.module('myApp')
-    .factory('ProfileFactory', ['$http', '$location', 'PARSE_HEADERS', 'PARSE_URI',
-      function ($http, $location, PARSE_HEADERS, PARSE_URI) {
+    .factory('ProfileFactory', ['$http', '$location', '$cookieStore', 'PARSE_HEADERS', 'PARSE_URI',
+      function ($http, $location, $cookieStore, PARSE_HEADERS, PARSE_URI) {
+
+        var user = $cookieStore.get('currentUser');
+
+        PARSE_HEADERS.headers['X-Parse-Session-Token'] = user.sessionToken;
 
         var getProfile = function () {
-          return $http.get(PARSE_URI + 'classes/Mechanic', PARSE_HEADERS);
+          return $http.get(PARSE_URI + 'users/<objectId>', PARSE_HEADERS);
         };
 
-        var addProfile = function (mech) {
-          $http.post(PARSE_URI + 'classes/Mechanic', mech, PARSE_HEADERS)
-            .success( function () {
-            console.log('sweet');
-            }
-          );
+        var addProfile = function (mech, user) {
+          console.log(user);
+          $http.put(PARSE_URI + 'users/'+ user.objectId, mech, PARSE_HEADERS)
+            .success( function (mech) {
+              $cookieStore.put('currentUser', mech);
+              console.log('sweet');
+            });
         };
 
         var updateMechanic = function(mechanic){
-          $httmpost(PARSE_URI + 'class/Mechanic', mechanic, PARSE_HEADERS).success(function(){
+          $httmpost(PARSE_URI + 'users/<objectId>', mechanic, PARSE_HEADERS).success(function(){
             $location.path('/');
           });
         };
