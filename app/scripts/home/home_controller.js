@@ -1,7 +1,7 @@
 (function(){
 
 angular.module('myApp')
-  .controller('ProfileCtrl', function ($scope, ProfileFactory, $cookieStore) {
+  .controller('HomeCtrl', function ($scope, ProfileFactory, $cookieStore) {
     $scope.currentUser = $cookieStore.get('currentUser');
 
     $scope.profile = function(mech){
@@ -10,6 +10,6 @@ angular.module('myApp')
       console.log(mech);
     };
 
-    
+
 });
 }());
