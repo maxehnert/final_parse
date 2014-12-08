@@ -15,16 +15,16 @@
     <div ng-controller="NavCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav"></ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-hide='user.objectId'>
+        <li ng-show='currentUsername'>
           <a href="#/myprofile"> Hello, {{currentUsername}} </a>
         </li>
-        <li ng-show='user.objectId'>
+        <li ng-hide='currentUsername'>
           <a href="#/register">Register</a>
         </li>
-        <li ng-show='user.objectId'>
+        <li ng-hide='currentUsername'>
           <a href="#/login">Log In</a>
         </li>
-        <li ng-hide='user.objectId'>
+        <li ng-show='currentUsername'>
           <a href="#" ng-click="logout()">Logout</a>
         </li>
       </ul>

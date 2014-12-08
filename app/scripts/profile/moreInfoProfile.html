@@ -1,8 +1,9 @@
-<div ng-include='{{user.objectId}}' id="{{ user.objectId }}">
+<div ng-controller='ProfileCtrl' id="{{user.objectId}}">
   Username: {{user.username}}
   My Name: {{user.name}}
   My Specialty: {{user.specialty}}
   Years of experience: {{user.exp}}
+  Hourly Rate: ${{user.rate}}
   I will come to you: {{user.travel}}
   I have my own shop: {{user.shop}}
   My service area is: {{user.location}}

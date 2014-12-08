@@ -1,3 +1,8 @@
-## Yo, I'm a Readme
+## Mechanic Finder App
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+This is my final project for The Iron Yard
+In this app you can add add/or find mechanics in your area
+
+To run this:
+
+install npm and bower

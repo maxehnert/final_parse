@@ -14,12 +14,7 @@ angular.module('myApp')
     $scope.users = data.results;
     console.log(data);
   });
-  //  $scope.search = function(query) {
-  //     HomeFactory.searchResults(query({where: {loc: {$regex: query}}}).then(function(data) {
-  //       $scope.users = data;
-  //       console.log(data.results);
-  //     }));
-  //   }
+
     // $scope.users =
     // [{name: 'max'},{name: 'john'}];
 

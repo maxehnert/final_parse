@@ -6,37 +6,44 @@
 <form role="form" ng-submit="profile(mech)" ng-controller='ProfileCtrl'>
   <div class="form-group">
     <label for="inputName">Your Name </label>
-    <input type="text" ng-model='mech.name'  value="{{currentUser.name}}" class="form-control" id="inputName" placeholder="Enter Your Full Name"> 
+    <input type="text" ng-model='currentUser.name'   class="form-control" id="inputName" placeholder="Your name" required>
   </div>
   <div class="form-group">
     <label for="inputEmail1">Email address</label>
-    <input type="email" ng-model='mech.email' class="form-control" id="inputEmail1" placeholder="Enter email">
+    <input type="email" ng-model='currentUser.email' class="form-control" id="inputEmail1" placeholder="Enter email" required>
   </div>
   <div class="form-group">
     <label for="inputSpecialty">Specialty</label>
-    <input type="text" ng-model='mech.specialty' class="form-control" id="inputSpecialty" placeholder="Specialty">
+    <input type="text" ng-model='currentUser.specialty' class="form-control" id="inputSpecialty" placeholder="Specialty" required>
   </div>
   <div class="form-group">
     <label for="inputExperience">Years of Experience</label>
-    <input type="number" ng-model='mech.exp' class="form-control" id="inputExperience" placeholder="Experience">
+    <input type="number" ng-model='currentUser.exp' class="form-control" id="inputExperience" placeholder="Experience" required>
   </div>
   <div class="form-group">
     <label for="inputLocation">Service Area</label>
-    <input type="text" ng-model='mech.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter zip code of service area' class="form-control" id="inputLocation">
+    <input type="text" ng-model='currentUser.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter zip code of service area' class="form-control" id="inputLocation" required>
+  </div>
+  <div class="form-group">
+    <label for="inputRate">Hourly Rate</label>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input type="number" ng-model='currentUser.rate' class="form-control" id="inputRate" placeholder="Rate" required>      <span class="input-group-addon">.00</span>
+    </div>
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox" ng-model='mech.travel'>Yes I travel
+      <input type="checkbox" ng-model='currentUser.travel'>Yes I travel
     </label>
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox" ng-model='mech.shop'>I have my own facilities
+      <input type="checkbox" ng-model='currentUser.shop'>I have my own facilities
     </label>
   </div>
   <div class="form-group">
     <label for="inputBio">Your Bio</label>
-    <textarea ng-model='mech.bio' class="form-control" rows="3" placeholder='Tell your customers about you'></textarea>
+    <textarea ng-model='currentUser.bio' class="form-control" rows="3" placeholder='Tell your customers about you' required></textarea>
   </div>
   <button type="submit" class="btn btn-success" value='Save'>Submit</button>
 </form>

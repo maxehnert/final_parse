@@ -23,6 +23,13 @@
     <label for="inputLocation">Service Area</label>
     <input type="text" ng-model='mech.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter zip code of service area' class="form-control" id="inputLocation">
   </div>
+  <div class="form-group">
+    <label for="inputRate">Hourly Rate</label>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input type="number" ng-model='currentUser.rate' class="form-control" id="inputRate" placeholder="Rate" required>      <span class="input-group-addon">.00</span>
+    </div>
+  </div>
   <div class="checkbox">
     <label>
       <input type="checkbox" ng-model='mech.travel'>Yes I travel

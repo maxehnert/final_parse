@@ -5,9 +5,9 @@
       function ($http, $location, $cookieStore, PARSE_HEADERS, PARSE_URI) {
 
         var user = $cookieStore.get('currentUser');
-
+        if(user){
         PARSE_HEADERS.headers['X-Parse-Session-Token'] = user.sessionToken;
-
+};
         var getAllUsers = function(){
           return $http.get(PARSE_URI + 'users/', PARSE_HEADERS);
         };

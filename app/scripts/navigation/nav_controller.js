@@ -7,8 +7,14 @@
       $location.path('/');
     };
 
-    $scope.currentUsername = $cookieStore.get('currentUser').username;
-        console.log($scope.currentUsername);
+
+
+var cuser = $cookieStore.get('currentUser');
+  if(cuser){
+    $scope.currentUsername = cuser.username;
+  }
+    // $scope.currentUsername = $cookieStore.get('currentUser').username;
+        //console.log($scope.currentUsername);
 
   });
 
