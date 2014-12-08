@@ -8,8 +8,16 @@
 
         PARSE_HEADERS.headers['X-Parse-Session-Token'] = user.sessionToken;
 
+        var getAllUsers = function(){
+          return $http.get(PARSE_URI + 'users/', PARSE_HEADERS);
+        };
+        //NOT USED
         var getProfile = function () {
-          return $http.get(PARSE_URI + 'users/<objectId>', PARSE_HEADERS);
+          return $http.get(PARSE_URI + 'users/'+ user.objectId, mech, PARSE_HEADERS)
+          .success( function (mech) {
+            $cookieStore.get('currentUser', mech);
+            console.log('alrighty');
+          });
         };
 
         var addProfile = function (mech, user) {
@@ -20,7 +28,7 @@
               console.log('sweet');
             });
         };
-
+        //NOT USED
         var updateMechanic = function(mechanic){
           $httmpost(PARSE_URI + 'users/<objectId>', mechanic, PARSE_HEADERS).success(function(){
             $location.path('/');
@@ -30,7 +38,8 @@
         return {
           getProfile: getProfile,
           addProfile: addProfile,
-          updateMechanic: updateMechanic
+          updateMechanic: updateMechanic,
+          getAllUsers: getAllUsers
         }
 
       }

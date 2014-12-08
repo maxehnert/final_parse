@@ -12,8 +12,8 @@
     .config( function ($routeProvider) {
 
       $routeProvider.when('/', {
-        templateUrl: 'scripts/users/login.html',
-        controller: 'User'
+        templateUrl: 'scripts/home/home.html',
+        controller: 'HomeCtrl'
       })
       .when('/register', {
         templateUrl: 'scripts/users/register.html',
@@ -30,6 +30,14 @@
       .when('/myprofile', {
         templateUrl: 'scripts/profile/my-profile.html',
         controller: 'ProfileCtrl'
+      })
+      .when('/updateProfile', {
+        templateUrl: 'scripts/profile/update-profile.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/userprofile/:id', {
+        templateUrl: 'scripts/profile/moreInfoProfile.html',
+        controller: 'HomeCtrl'
       })
       .otherwise({
         templateUrl: 'scripts/users/login.html',

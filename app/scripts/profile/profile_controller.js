@@ -10,6 +10,15 @@ angular.module('myApp')
       console.log(mech);
     };
 
-    
+    // $scope.getProfile = function(mech){
+    //
+    //   ProfileFactory.getProfile(mech, $scope.currentUser);
+    //   console.log(mech);
+    // };
+
+    // $scope.gravatar = function(mech){
+    //   var gravatar = md5.createHash($scope.mech.email || '');
+    // }
+
 });
 }());

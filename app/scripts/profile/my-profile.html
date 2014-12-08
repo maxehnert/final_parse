@@ -1,10 +1,16 @@
-<div ng-controller='ProfileCtrl'>
-  Username: {{currentUser.username}}
-  My Name: {{currentUser.name}}
-  My Specialty: {{currentUser.specialty}}
-  Years of experience: {{currentUser.exp}}
-  I will come to you: {{currentUser.travel}}
-  I have my own shop: {{currentUser.shop}}
-  My service area is: {{currentUser.location}}
-  About me: {{currentUser.bio}}
+<div class="page-header">
+  <h2>My Profile </h2>
 </div>
+<div class="row" ng-controller='ProfileCtrl'>
+  <div class="col-xs-6 col-sm-4">Username: {{currentUser.username}}</div>
+  <div class="col-xs-6 col-sm-4">  My Name: {{currentUser.name}}</div>
+  <div class="col-xs-6 col-sm-4">My Specialty: {{currentUser.specialty}}</div>
+  <div class="col-xs-6 col-sm-4">Years of experience: {{currentUser.exp}}</div>
+  <div class="col-xs-6 col-sm-4">I will come to you: {{currentUser.travel}}</div>
+  <div class="col-xs-6 col-sm-4">I have my own shop: {{currentUser.shop}}</div>
+  <div class="col-xs-6 col-sm-4">My service area is: {{currentUser.location}}</div>
+  <div class="col-xs-6 col-sm-4"> About me: {{currentUser.bio}}</div>
+</div>
+<br>
+<a href="#/updateProfile"><button class="btn btn-warning">Update</button></a>
+<a href="#/profile"><button class="btn btn-success">Add Profile</button></a>

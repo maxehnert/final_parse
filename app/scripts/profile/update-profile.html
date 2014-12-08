@@ -1,11 +1,12 @@
 
 <div class="page-header">
-  <h2>Add Profile </h2>
+  <h2>Update Profile </h2>
 </div>
+
 <form role="form" ng-submit="profile(mech)" ng-controller='ProfileCtrl'>
   <div class="form-group">
-    <label for="inputName">Your Name</label>
-    <input type="text" ng-model='mech.name' class="form-control" id="inputName" placeholder="Enter Youy Full Name">
+    <label for="inputName">Your Name </label>
+    <input type="text" ng-model='mech.name'  value="{{currentUser.name}}" class="form-control" id="inputName" placeholder="Enter Your Full Name"> 
   </div>
   <div class="form-group">
     <label for="inputEmail1">Email address</label>

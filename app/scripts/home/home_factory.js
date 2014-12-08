@@ -1,21 +1,20 @@
-// (function () {
-//
-//   angular.module('myApp')
-//     .factory('ProfileFactory', ['$http', '$location', '$cookieStore', 'PARSE_HEADERS', 'PARSE_URI',
-//       function ($http, $location, $cookieStore, PARSE_HEADERS, PARSE_URI) {
-//
-//         var user = $http.get(PARSE_URI + 'users/' + user.objectId);
-//
-//         PARSE_HEADERS.headers['X-Parse-Session-Token'] = user.sessionToken;
-//
-//
-//         return {
-//           getProfile: getProfile,
-//           addProfile: addProfile,
-//           updateMechanic: updateMechanic
-//         }
-//
-//       }
-//     ]);
-//
-// }());
+(function () {
+
+  angular.module('myApp')
+    .factory('HomeFactory', ['$http', '$location', '$cookieStore', 'PARSE_HEADERS', 'PARSE_URI',
+      function ($http, $location, $cookieStore, PARSE_HEADERS, PARSE_URI) {
+
+        var user = $http.get(PARSE_URI + 'users/' + user.objectId);
+
+        // var searchResults = function(mech, user){
+        //   return $http.get(PARSE_URI + 'users/'+ user.objectId, mech, PARSE_HEADERS);
+        // };
+
+        return {
+          // searchResults: searchResults
+        }
+
+      }
+    ]);
+
+}());

@@ -1,0 +1,12 @@
+<div ng-include='{{user.objectId}}' id="{{ user.objectId }}">
+  Username: {{user.username}}
+  My Name: {{user.name}}
+  My Specialty: {{user.specialty}}
+  Years of experience: {{user.exp}}
+  I will come to you: {{user.travel}}
+  I have my own shop: {{user.shop}}
+  My service area is: {{user.location}}
+  About me: {{user.bio}}
+<a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
+</a>
+</div>

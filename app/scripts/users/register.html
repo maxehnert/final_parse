@@ -1,6 +1,11 @@
-<form ng-submit="register(user)">
-  <br />
-  <input type="text" ng-model="user.username" placeholder='username'/><br />
-  <input type="password" ng-model="user.password" placeholder='password'/><br />
-  <button>register</button>
+<form role="form" ng-submit="register(user)">
+  <div class="form-group">
+    <label for="inputUsername1">User Name</label>
+    <input type="text" ng-model="user.username" id="inputUsername1"placeholder='username'>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" ng-model="user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button class="btn btn-primary">register</button>
 </form>
