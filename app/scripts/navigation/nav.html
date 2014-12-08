@@ -16,7 +16,8 @@
       <ul class="nav navbar-nav"></ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-show='currentUsername'>
-          <a href="#/myprofile"> Hello, {{currentUsername}} </a>
+
+          <a href="#/myprofile"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="30"> Hello, {{currentUsername}} </a>
         </li>
         <li ng-hide='currentUsername'>
           <a href="#/register">Register</a>

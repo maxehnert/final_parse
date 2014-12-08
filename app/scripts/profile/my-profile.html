@@ -2,6 +2,12 @@
   <h2>My Profile </h2>
 </div>
 <div class="row" ng-controller='ProfileCtrl'>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100"></div>
+    <div class="col-md-4"></div>
+  </div>
+  <br>
   <div class="col-xs-6 col-sm-4">Username: {{currentUser.username}}</div>
   <div class="col-xs-6 col-sm-4">  My Name: {{currentUser.name}}</div>
   <div class="col-xs-6 col-sm-4">My Specialty: {{currentUser.specialty}}</div>
