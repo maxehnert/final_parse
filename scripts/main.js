@@ -116,7 +116,7 @@
         var checkUser = function (user) {
           var user = $cookieStore.get('currentUser');
           if(user) {
-            $location.path('/profile');
+            $location.path('/myprofile');
           } else {
             $location.path('/');
           }
@@ -171,6 +171,11 @@ angular.module('myApp')
       ProfileFactory.addProfile(mech, $scope.currentUser);
       console.log(mech);
     };
+    $scope.updateProfile = function(currentUser){
+
+      ProfileFactory.updateMechanic(currentUser, $scope.currentUser);
+      console.log(currentUser);
+    };
 
     // $scope.getProfile = function(mech){
     //
@@ -191,10 +196,11 @@ angular.module('myApp')
     .factory('ProfileFactory', ['$http', '$location', '$cookieStore', 'PARSE_HEADERS', 'PARSE_URI',
       function ($http, $location, $cookieStore, PARSE_HEADERS, PARSE_URI) {
 
-        var user = $cookieStore.get('currentUser');
-        if(user){
-        PARSE_HEADERS.headers['X-Parse-Session-Token'] = user.sessionToken;
-};
+        var cuser = $cookieStore.get('currentUser');
+        if(cuser){
+        PARSE_HEADERS.headers['X-Parse-Session-Token'] = cuser.sessionToken;
+        };
+        
         var getAllUsers = function(){
           return $http.get(PARSE_URI + 'users/', PARSE_HEADERS);
         };
@@ -212,13 +218,16 @@ angular.module('myApp')
           $http.put(PARSE_URI + 'users/'+ user.objectId, mech, PARSE_HEADERS)
             .success( function (mech) {
               $cookieStore.put('currentUser', mech);
+              $location.path('/myprofile');
               console.log('sweet');
             });
         };
-        //NOT USED
-        var updateMechanic = function(mechanic){
-          $httmpost(PARSE_URI + 'users/<objectId>', mechanic, PARSE_HEADERS).success(function(){
-            $location.path('/');
+
+        var updateMechanic = function(currentUser, user){
+          $http.post(PARSE_URI + 'users/' + user.objectId, currentUser, PARSE_HEADERS).success( function (mech) {
+            $cookieStore.put('currentUser', mech);
+            $location.path('/myprofile');
+            console.log('sweet');
           });
         };
 
