@@ -12,8 +12,8 @@
     .config( function ($routeProvider) {
 
       $routeProvider.when('/', {
-        templateUrl: 'scripts/users/login.html',
-        controller: 'User'
+        templateUrl: 'scripts/home/home.html',
+        controller: 'HomeCtrl'
       })
       .when('/register', {
         templateUrl: 'scripts/users/register.html',
@@ -30,6 +30,14 @@
       .when('/myprofile', {
         templateUrl: 'scripts/profile/my-profile.html',
         controller: 'ProfileCtrl'
+      })
+      .when('/updateProfile', {
+        templateUrl: 'scripts/profile/update-profile.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/userprofile/:id', {
+        templateUrl: 'scripts/profile/moreInfoProfile.html',
+        controller: 'HomeCtrl'
       })
       .otherwise({
         templateUrl: 'scripts/users/login.html',
@@ -158,7 +166,16 @@ angular.module('myApp')
       console.log(mech);
     };
 
-    
+    // $scope.getProfile = function(mech){
+    //
+    //   ProfileFactory.getProfile(mech, $scope.currentUser);
+    //   console.log(mech);
+    // };
+
+    // $scope.gravatar = function(mech){
+    //   var gravatar = md5.createHash($scope.mech.email || '');
+    // }
+
 });
 }());
 
@@ -172,8 +189,16 @@ angular.module('myApp')
 
         PARSE_HEADERS.headers['X-Parse-Session-Token'] = user.sessionToken;
 
+        var getAllUsers = function(){
+          return $http.get(PARSE_URI + 'users/', PARSE_HEADERS);
+        };
+        //NOT USED
         var getProfile = function () {
-          return $http.get(PARSE_URI + 'users/<objectId>', PARSE_HEADERS);
+          return $http.get(PARSE_URI + 'users/'+ user.objectId, mech, PARSE_HEADERS)
+          .success( function (mech) {
+            $cookieStore.get('currentUser', mech);
+            console.log('alrighty');
+          });
         };
 
         var addProfile = function (mech, user) {
@@ -184,7 +209,7 @@ angular.module('myApp')
               console.log('sweet');
             });
         };
-
+        //NOT USED
         var updateMechanic = function(mechanic){
           $httmpost(PARSE_URI + 'users/<objectId>', mechanic, PARSE_HEADERS).success(function(){
             $location.path('/');
@@ -194,10 +219,39 @@ angular.module('myApp')
         return {
           getProfile: getProfile,
           addProfile: addProfile,
-          updateMechanic: updateMechanic
+          updateMechanic: updateMechanic,
+          getAllUsers: getAllUsers
         }
 
       }
     ]);
 
+}());
+
+(function(){
+
+angular.module('myApp')
+  .controller('HomeCtrl',['$scope', '$cookieStore', 'ProfileFactory', function ($scope, $cookieStore, ProfileFactory) {
+    // $scope.currentUser = $cookieStore.get('currentUser');
+    //
+    // $scope.profile = function(mech){
+    //
+    //   ProfileFactory.addProfile(mech, $scope.currentUser);
+    //   console.log(mech);
+    // };
+
+  ProfileFactory.getAllUsers().success(function(data){
+    $scope.users = data.results;
+    console.log(data);
+  });
+  //  $scope.search = function(query) {
+  //     HomeFactory.searchResults(query({where: {loc: {$regex: query}}}).then(function(data) {
+  //       $scope.users = data;
+  //       console.log(data.results);
+  //     }));
+  //   }
+    // $scope.users =
+    // [{name: 'max'},{name: 'john'}];
+
+}]);
 }());
