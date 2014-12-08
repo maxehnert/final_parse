@@ -175,7 +175,7 @@ var cuser = $cookieStore.get('currentUser');
 (function(){
 
 angular.module('myApp')
-  .controller('ProfileCtrl', function ($scope, ProfileFactory, $cookieStore) {
+  .controller('ProfileCtrl', function ($scope, ProfileFactory, $cookieStore, $http, $scope) {
     $scope.currentUser = $cookieStore.get('currentUser');
 
     $scope.profile = function(mech){
@@ -183,22 +183,50 @@ angular.module('myApp')
       ProfileFactory.addProfile(mech, $scope.currentUser);
       console.log(mech);
     };
+    $scope.cprofile = function(cust){
+
+      ProfileFactory.addCustProfile(cust, $scope.currentUser);
+      console.log(cust);
+    };
     $scope.updateProfile = function(currentUser){
 
       ProfileFactory.updateMechanic(currentUser, $scope.currentUser);
       console.log(currentUser);
     };
 
-    // $scope.getProfile = function(mech){
-    //
-    //   ProfileFactory.getProfile(mech, $scope.currentUser);
-    //   console.log(mech);
-    // };
+$http.get('https://api.edmunds.com/api/vehicle/v2/makes?view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
+.then(function (response)
+      {
+        $scope.makes = response.data.makes;
+        }, function (error) {
+        $scope.error1 = JSON.stringify(error);
+        });
 
-    // $scope.gravatar = function(mech){
-    //   var gravatar = md5.createHash($scope.mech.email || '');
-    // }
+// for selected make - get all the models.
+$scope.getmodels = function(makeNiceName) {
+  console.log(makeNiceName);
+    $http.get('https://api.edmunds.com/api/vehicle/v2/:'+makeNiceName+'/models?view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
+.then(function (response)
+      {
+        console.log(response.data.models);
+        $scope.models = response.data.models;
+        }, function (error) {
+        $scope.error2 = JSON.stringify(error);
+        });
+};
 
+$scope.getyear = function(makeNiceName, makeNiceModel){
+$http.get('https://api.edmunds.com/api/vehicle/v2/'+makeNiceName+'/'+modelNiceName+'/years?state=new&view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
+.then(function (response)
+      {
+        console.log(response.data.years);
+        $scope.models = response.data.years;
+        }, function (error) {
+        $scope.error3 = JSON.stringify(error);
+        });
+
+      };
+////
 });
 }());
 
@@ -212,7 +240,7 @@ angular.module('myApp')
         if(cuser){
         PARSE_HEADERS.headers['X-Parse-Session-Token'] = cuser.sessionToken;
         };
-        
+
         var getAllUsers = function(){
           return $http.get(PARSE_URI + 'users/', PARSE_HEADERS);
         };
@@ -235,6 +263,16 @@ angular.module('myApp')
             });
         };
 
+        var addCustProfile = function (cust, user) {
+          console.log(user);
+          $http.put(PARSE_URI + 'users/'+ user.objectId, cust, PARSE_HEADERS)
+            .success( function (cust) {
+              $cookieStore.put('currentUser', cust);
+              $location.path('/myprofile');
+              console.log('sweet');
+            });
+        };
+
         var updateMechanic = function(currentUser, user){
           $http.post(PARSE_URI + 'users/' + user.objectId, currentUser, PARSE_HEADERS).success( function (mech) {
             $cookieStore.put('currentUser', mech);
@@ -246,6 +284,7 @@ angular.module('myApp')
         return {
           getProfile: getProfile,
           addProfile: addProfile,
+          addCustProfile: addCustProfile,
           updateMechanic: updateMechanic,
           getAllUsers: getAllUsers
         }

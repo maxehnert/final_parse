@@ -2,7 +2,9 @@
 <div class="page-header">
   <h2>Add Profile </h2>
 </div>
-<form role="form" ng-submit="profile(mech)" ng-controller='ProfileCtrl'>
+
+<!-- Form for Mechanics -->
+<form role="form" ng-show='currentUser.mechanic' ng-submit="profile(mech)" ng-controller='ProfileCtrl'>
   <div class="form-group">
     <label for="inputName">Your Name</label>
     <input type="text" ng-model='mech.name' class="form-control" id="inputName" placeholder="Enter Youy Full Name">
@@ -44,5 +46,56 @@
     <label for="inputBio">Your Bio</label>
     <textarea ng-model='mech.bio' class="form-control" rows="3" placeholder='Tell your customers about you'></textarea>
   </div>
+  <button type="submit" class="btn btn-success" value='Save'>Submit</button>
+</form>
+
+<!-- Form for Customers -->
+<form role="form" ng-show='currentUser.notmechanic' ng-submit="cprofile(cust)" ng-controller='ProfileCtrl'>
+  <div class="form-group">
+    <label for="inputName">Your Name</label>
+    <input type="text" ng-model='cust.name' class="form-control" id="inputName" placeholder="Enter Youy Full Name">
+  </div>
+  <div class="form-group">
+    <label for="inputEmail1">Email address</label>
+    <input type="email" ng-model='cust.email' class="form-control" id="inputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="inputMake">Vehicle Make</label>
+    <input type="text" ng-model='cust.make' class="form-control" id="inputMake" placeholder="Vehicle">
+  </div>
+  <div class="form-group">
+    <label for="inputModel">Vehicle Model</label>
+    <input type="text" ng-model='cust.model' class="form-control" id="inputModel" placeholder="Model">
+  </div>
+  <div class="form-group">
+    <label for="inputLocation">My Location</label>
+    <input type="text" ng-model='cust.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter your zip code' class="form-control" id="inputLocation">
+  </div>
+
+
+
+        Makes       <select ng-change="getmodels(makeNiceName)" ng-model="makeNiceName">
+        <option ng-repeat="make in makes" value="{{make.niceName}}">{{make.name}}</option>
+      </select>
+
+        {{error}}
+              <br />
+
+        Models:
+              <select>
+        <option ng-repeat="model in models" value="{{model.name}}">{{model.name}}</option>
+      </select>
+
+        {{error2}}
+<br />
+
+Years:
+<select>
+<option ng-repeat="year in years" value="{{model.year}}">{{model.year}}</option>
+</select>
+
+{{error3}}
+
+
   <button type="submit" class="btn btn-success" value='Save'>Submit</button>
 </form>

@@ -3,7 +3,8 @@
   <h2>Update Profile </h2>
 </div>
 
-<form role="form" ng-submit="profile(currentUser)" ng-controller='ProfileCtrl'>
+<!-- Form for Mechanics -->
+<form role="form" ng-show='currentUser.mechanic' ng-submit="profile(currentUser)" ng-controller='ProfileCtrl'>
   <div class="form-group">
     <label for="inputName">Your Name </label>
     <input type="text" ng-model='currentUser.name'   class="form-control" id="inputName" placeholder="Your name" required>
@@ -44,6 +45,32 @@
   <div class="form-group">
     <label for="inputBio">Your Bio</label>
     <textarea ng-model='currentUser.bio' class="form-control" rows="3" placeholder='Tell your customers about you' required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success" value='Save'>Submit</button>
+</form>
+
+
+<!-- Form for Mechanics -->
+<form role="form" ng-show='currentUser.notmechanic' ng-submit="profile(currentUser)" ng-controller='ProfileCtrl'>
+  <div class="form-group">
+    <label for="inputName">Your Name </label>
+    <input type="text" ng-model='currentUser.name'   class="form-control" id="inputName" placeholder="Your name" required>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail1">Email address</label>
+    <input type="email" ng-model='currentUser.email' class="form-control" id="inputEmail1" placeholder="Enter email" required>
+  </div>
+  <div class="form-group">
+    <label for="inputMake">Vehicle Make</label>
+    <input type="text" ng-model='currentUser.make' class="form-control" id="inputMake" placeholder="Make" required>
+  </div>
+  <div class="form-group">
+    <label for="inputModel">Vehicle Model</label>
+    <input type="text" ng-model='currentUser.model' class="form-control" id="inputModel" placeholder="Model" required>
+  </div>
+  <div class="form-group">
+    <label for="inputLocation">My Location</label>
+    <input type="text" ng-model='currentUser.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter your zip code' class="form-control" id="inputLocation" required>
   </div>
   <button type="submit" class="btn btn-success" value='Save'>Submit</button>
 </form>

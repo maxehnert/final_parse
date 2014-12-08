@@ -2,7 +2,7 @@
   <h2>My Profile </h2>
 </div>
 <!-- Form for Mechanics -->
-<div ng-show='user.mechanic' class="row" ng-controller='ProfileCtrl'>
+<div ng-show='currentUser.mechanic' class="row" ng-controller='ProfileCtrl'>
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100"></div>
@@ -21,7 +21,7 @@
 </div>
 
 <!-- Form for Customers -->
-<div ng-show='user.notmechanic' class="row" ng-controller='ProfileCtrl'>
+<div ng-show='currentUser.notmechanic' class="row" ng-controller='ProfileCtrl'>
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100"></div>
@@ -29,14 +29,10 @@
   </div>
   <br>
   <div class="col-xs-6 col-sm-4">Username: {{currentUser.username}}</div>
-  <div class="col-xs-6 col-sm-4">  My Name: {{currentUser.name}}</div>
-  <div class="col-xs-6 col-sm-4">My Car: {{currentUser.specialty}}</div>
-  <div class="col-xs-6 col-sm-4">Years of experience: {{currentUser.exp}}</div>
-  <div class="col-xs-6 col-sm-4">Hourly Rate: ${{currentUser.rate}}</div>
-  <div class="col-xs-6 col-sm-4">I will come to you: {{currentUser.travel}}</div>
-  <div class="col-xs-6 col-sm-4">I have my own shop: {{currentUser.shop}}</div>
-  <div class="col-xs-6 col-sm-4">My service area is: {{currentUser.location}}</div>
-  <div class="col-xs-6 col-sm-4"> About me: {{currentUser.bio}}</div>
+  <div class="col-xs-6 col-sm-4">My Name: {{currentUser.name}}</div>
+  <div class="col-xs-6 col-sm-4">Make: {{currentUser.make}}</div>
+  <div class="col-xs-6 col-sm-4">Model: {{currentUser.model}}</div>
+  <div class="col-xs-6 col-sm-4">My Location: {{currentUser.location}}</div>
 </div>
 
 <br>
