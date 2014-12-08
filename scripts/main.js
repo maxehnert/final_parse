@@ -163,6 +163,7 @@
 var cuser = $cookieStore.get('currentUser');
   if(cuser){
     $scope.currentUsername = cuser.username;
+    $scope.currentUseremail = cuser.email;
   }
     // $scope.currentUsername = $cookieStore.get('currentUser').username;
         //console.log($scope.currentUsername);
