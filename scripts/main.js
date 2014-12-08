@@ -147,8 +147,14 @@
       $location.path('/');
     };
 
-    $scope.currentUsername = $cookieStore.get('currentUser').username;
-        console.log($scope.currentUsername);
+
+
+var cuser = $cookieStore.get('currentUser');
+  if(cuser){
+    $scope.currentUsername = cuser.username;
+  }
+    // $scope.currentUsername = $cookieStore.get('currentUser').username;
+        //console.log($scope.currentUsername);
 
   });
 
@@ -186,9 +192,9 @@ angular.module('myApp')
       function ($http, $location, $cookieStore, PARSE_HEADERS, PARSE_URI) {
 
         var user = $cookieStore.get('currentUser');
-
+        if(user){
         PARSE_HEADERS.headers['X-Parse-Session-Token'] = user.sessionToken;
-
+};
         var getAllUsers = function(){
           return $http.get(PARSE_URI + 'users/', PARSE_HEADERS);
         };
@@ -244,12 +250,7 @@ angular.module('myApp')
     $scope.users = data.results;
     console.log(data);
   });
-  //  $scope.search = function(query) {
-  //     HomeFactory.searchResults(query({where: {loc: {$regex: query}}}).then(function(data) {
-  //       $scope.users = data;
-  //       console.log(data.results);
-  //     }));
-  //   }
+
     // $scope.users =
     // [{name: 'max'},{name: 'john'}];
 
