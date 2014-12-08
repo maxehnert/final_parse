@@ -9,6 +9,11 @@ angular.module('myApp')
       ProfileFactory.addProfile(mech, $scope.currentUser);
       console.log(mech);
     };
+    $scope.updateProfile = function(currentUser){
+
+      ProfileFactory.updateMechanic(currentUser, $scope.currentUser);
+      console.log(currentUser);
+    };
 
     // $scope.getProfile = function(mech){
     //
