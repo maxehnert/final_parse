@@ -15,6 +15,10 @@
         templateUrl: 'scripts/home/home.html',
         controller: 'HomeCtrl'
       })
+      .when('/mechhome', {
+        templateUrl: 'scripts/home/mech-home.html',
+        controller: 'HomeCtrl'
+      })
       .when('/register', {
         templateUrl: 'scripts/users/register.html',
         controller: 'User'
@@ -87,6 +91,7 @@
 
         $scope.login = function (user) {
           UserFactory.login(user);
+
         };
 
         $scope.logout = function () {
@@ -100,8 +105,8 @@
 
 (function () {
 
-    angular.module('myApp').factory('UserFactory', ['PARSE_HEADERS', 'PARSE_URI', '$http', '$cookieStore', '$location',
-      function (PARSE_HEADERS, PARSE_URI, $http, $cookieStore, $location) {
+    angular.module('myApp').factory('UserFactory', ['PARSE_HEADERS', 'PARSE_URI', '$http', '$cookieStore', '$location', '$window',
+      function (PARSE_HEADERS, PARSE_URI, $http, $cookieStore, $location, $window) {
 
         var register = function (user) {
           return $http.post(PARSE_URI + 'users/', user, PARSE_HEADERS).success( function (data) {
@@ -128,6 +133,7 @@
           var user = $cookieStore.get('currentUser');
           if(user) {
             $location.path('/myprofile');
+            $window.location.reload();
           } else {
             $location.path('/');
           }
@@ -209,23 +215,14 @@ $scope.getmodels = function(makeNiceName) {
 .then(function (response)
       {
         console.log(response.data.models);
+        console.log('sweet');
+        //console.log(response.data.models.years);
         $scope.models = response.data.models;
         }, function (error) {
         $scope.error2 = JSON.stringify(error);
         });
 };
 
-$scope.getyear = function(makeNiceName, makeNiceModel){
-$http.get('https://api.edmunds.com/api/vehicle/v2/'+makeNiceName+'/'+modelNiceName+'/years?state=new&view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
-.then(function (response)
-      {
-        console.log(response.data.years);
-        $scope.models = response.data.years;
-        }, function (error) {
-        $scope.error3 = JSON.stringify(error);
-        });
-
-      };
 ////
 });
 }());
