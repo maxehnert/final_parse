@@ -35,23 +35,14 @@ $scope.getmodels = function(makeNiceName) {
 .then(function (response)
       {
         console.log(response.data.models);
+        console.log('sweet');
+        //console.log(response.data.models.years);
         $scope.models = response.data.models;
         }, function (error) {
         $scope.error2 = JSON.stringify(error);
         });
 };
 
-$scope.getyear = function(makeNiceName, makeNiceModel){
-$http.get('https://api.edmunds.com/api/vehicle/v2/'+makeNiceName+'/'+modelNiceName+'/years?state=new&view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
-.then(function (response)
-      {
-        console.log(response.data.years);
-        $scope.models = response.data.years;
-        }, function (error) {
-        $scope.error3 = JSON.stringify(error);
-        });
-
-      };
 ////
 });
 }());

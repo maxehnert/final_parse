@@ -1,7 +1,7 @@
 (function () {
 
-    angular.module('myApp').factory('UserFactory', ['PARSE_HEADERS', 'PARSE_URI', '$http', '$cookieStore', '$location',
-      function (PARSE_HEADERS, PARSE_URI, $http, $cookieStore, $location) {
+    angular.module('myApp').factory('UserFactory', ['PARSE_HEADERS', 'PARSE_URI', '$http', '$cookieStore', '$location', '$window',
+      function (PARSE_HEADERS, PARSE_URI, $http, $cookieStore, $location, $window) {
 
         var register = function (user) {
           return $http.post(PARSE_URI + 'users/', user, PARSE_HEADERS).success( function (data) {
@@ -28,6 +28,7 @@
           var user = $cookieStore.get('currentUser');
           if(user) {
             $location.path('/myprofile');
+            $window.location.reload();
           } else {
             $location.path('/');
           }

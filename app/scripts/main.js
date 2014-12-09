@@ -15,6 +15,10 @@
         templateUrl: 'scripts/home/home.html',
         controller: 'HomeCtrl'
       })
+      .when('/mechhome', {
+        templateUrl: 'scripts/home/mech-home.html',
+        controller: 'HomeCtrl'
+      })
       .when('/register', {
         templateUrl: 'scripts/users/register.html',
         controller: 'User'

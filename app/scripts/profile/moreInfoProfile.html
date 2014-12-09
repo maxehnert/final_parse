@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4"><img gravatar-src="'{{user.email}}'" gravatar-size="100"></div>
+    <div class="col-md-4">  <img gravatar-src="'{{user.email}}'" gravatar-size="100"></div>
     <div class="col-md-4"></div>
   </div>
   <br>
@@ -14,16 +14,16 @@
   <div class="col-xs-6 col-sm-4">I have my own shop: {{user.shop}}</div>
   <div class="col-xs-6 col-sm-4">My service area is: {{user.location}}</div>
   <div class="col-xs-6 col-sm-4"> About me: {{user.bio}}</div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-4"><a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
-    </a></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-  </div>
 </div>
-
+<br>
+<!--   <div class="row">
+  <div class="col-md-4"><a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
+  </a></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+</div>
+</div>
+ -->
 
 <!-- Customers More Info Page -->
 <div ng-show='currentUser.mechanic' ng-controller='HomeCtrl' id="{{user.objectId}}">
@@ -40,7 +40,6 @@
 <div class="col-xs-6 col-sm-4">Model: {{user.model}}</div>
 <div class="col-xs-6 col-sm-4">My Location: {{user.location}}</div>
 </div>
-<br>
 <div class="row">
   <div class="col-md-4"><a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
   </a></div>

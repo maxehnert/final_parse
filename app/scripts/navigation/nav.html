@@ -8,7 +8,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" ng-hide='currentUsername'>Auto</a>
+      <a ng-show='currentUser.mechanic' class="navbar-brand" href="#/mechhome">Mechanic Finder</a>
+      <a ng-hide='currentUser.mechanic' class="navbar-brand" href="#">Mechanic Finder</a>
+
     </div>
 
 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,29 +34,3 @@
     </div>
   </div>
 </nav>
-
-<!-- <nav>
-<div ng-controller="NavCtrl" class="n">
-
-  <ul class="">
-    <li> {{currentUser}}</li>
-    <li>
-      <a href="profile/">Profile</a>
-    </li>
-    <li>
-      <a href="register/">Register</a>
-    </li>
-    <li>
-      <a href="login/">Log In</a>
-    </li>
-    <li>
-      <a href="#" ng-click="logout()">Logout</a>
-    </li>
-    <li>
-      <a href="#" ng-click="checkUser()">Check User</a>
-    </li>
-  </ul>
-</div>
-
-</nav>
- -->
