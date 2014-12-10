@@ -1,16 +1,26 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div ng-if="currentUser.mechanic === true" class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a ng-show='currentUser.mechanic' class="navbar-brand" href="#/mechhome">Mechanic Finder</a>
-      <a ng-hide='currentUser.mechanic' class="navbar-brand" href="#">Mechanic Finder</a>
+      <a href="#/mechhome" class="navbar-brand">Mechanic Finder</a>
+<!--       <a href="#" ng-if="user.mechanic !== true" class="navbar-brand">Mechanic Finder</a> -->
 
+    </div>
+
+    <div ng-if="currentUser.mechanic !== true" class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" ng-if="user.mechanic !== true" class="navbar-brand">Mechanic Finder</a>
     </div>
 
 <!-- Collect the nav links, forms, and other content for toggling -->
