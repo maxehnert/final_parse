@@ -69,8 +69,9 @@
     angular.module('ui.gravatar').config([
   'gravatarServiceProvider', function(gravatarServiceProvider) {
     gravatarServiceProvider.defaults = {
-      size     : 100,
-      "default": "http://www.curefoundation.co.in/conphotogallery/1404818939_shadow2.JPG" //'mm'  // Mystery man as default for missing avatars
+      size: 100,
+      "default"://'../images/shadow.jpg'
+      "http://i.imgur.com/BNQZj9d.jpg?1" //'mm'  // Mystery man as default for missing avatars
     };
 
     // Use https endpoint
