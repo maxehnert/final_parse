@@ -30,6 +30,7 @@ $http.get('https://api.edmunds.com/api/vehicle/v2/makes?view=basic&fmt=json&api_
 
 // for selected make - get all the models.
 $scope.getmodels = function(makeNiceName) {
+
   console.log(makeNiceName);
     $http.get('https://api.edmunds.com/api/vehicle/v2/:'+makeNiceName+'/models?view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
 .then(function (response)
