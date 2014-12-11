@@ -6,24 +6,45 @@
     <div class="col-md-4"></div>
   </div>
   <br>
-  <div class="col-xs-6 col-sm-4">{{user.name}}</div>
-  <div class="col-xs-6 col-sm-4">My Specialty: {{user.specialty}}</div>
-  <div class="col-xs-6 col-sm-4">Years of experience: {{user.exp}}</div>
-  <div class="col-xs-6 col-sm-4">Hourly Rate: ${{user.rate}}</div>
-  <div class="col-xs-6 col-sm-4">I will come to you: {{user.travel}}</div>
-  <div class="col-xs-6 col-sm-4">I have my own shop: {{user.shop}}</div>
-  <div class="col-xs-6 col-sm-4">My service area is: {{user.location}}</div>
-  <div class="col-xs-6 col-sm-4"> About me: {{user.bio}}</div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>My Name</td>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <td>My Specialty</td>
+        <td>{{user.specialty}}</td>
+      </tr>
+      <tr>
+        <td>Years of Experience</td>
+        <td>{{user.exp}}</td>
+      </tr>
+      <tr>
+        <td>Hourly Rate</td>
+        <td>${{user.rate}}</td>
+      </tr>
+      <tr>
+        <td>I will come to you</td>
+        <td>{{user.travel}}</td>
+      </tr>
+      <tr>
+        <td>I have my own shop</td>
+        <td>{{user.shop}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{user.location}}</td>
+      </tr>
+      <tr>
+        <td>About Me</td>
+        <td>{{user.bio}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <br>
-<!--   <div class="row">
-  <div class="col-md-4"><a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
-  </a></div>
-  <div class="col-md-4"></div>
-  <div class="col-md-4"></div>
-</div>
-</div>
- -->
+
 
 <!-- Customers More Info Page -->
 <div ng-hide="user.mechanic" ng-controller='HomeCtrl' id="{{user.objectId}}">
@@ -34,17 +55,35 @@
   <div class="col-md-4"></div>
 </div>
 <br>
-<div class="col-xs-6 col-sm-4">My Name: {{user.name}}</div>
-<div class="col-xs-6 col-sm-4">Year: {{user.year}}</div>
-<div class="col-xs-6 col-sm-4">Make: {{user.make}}</div>
-<div class="col-xs-6 col-sm-4">Model: {{user.model}}</div>
-<div class="col-xs-6 col-sm-4">My Location: {{user.location}}</div>
-<div class="col-xs-6 col-sm-4">Service Requested: {{user.service}}</div>
-
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>My Name</td>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <td>Make</td>
+        <td>{{user.make}}</td>
+      </tr>
+      <tr>
+        <td>Model</td>
+        <td>{{user.model}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{user.location}}</td>
+      </tr>
+      <tr>
+        <td>Service Requested</td>
+        <td>{{user.service}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div class="row">
-  <div class="col-md-12"><a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
-  </a></div>
-  
+  <div class="col-md-12">
+    <a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
+    </a>
+  </div>
 </div>
 </div>

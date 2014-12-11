@@ -61,8 +61,6 @@
     <label for="inputEmail1">Email address</label>
     <input type="email" ng-model='cust.email' class="form-control" id="inputEmail1" placeholder="Enter email">
   </div>
-  <input type="text" ng-model='cust.year' class="form-control" id= placeholder="Enter y">
-
   <!-- <div class="form-group">
     <label for="inputMake">Vehicle Make</label>
     <input type="text" ng-model='cust.make' class="form-control" id="inputMake" placeholder="Vehicle">
@@ -80,34 +78,26 @@
   </select>
   {{error}}
   <br />
-
   Models:
   <select ng-model="currCar" ng-options="model.name for model in models">
 <!--     <option ng-model='cust.model'></option>
  -->  </select>
-
-
   {{error2}}
   <br />
-
   Years:
 <select ng-model="currYear" ng-options="y.year for y in currCar.years">
 <!--   <option ng-model='cust.year'></option>
  --></select>
   {{error3}}
-
-
   <div class="form-group">
     <label for="inputLocation">My Location</label>
     <input type="text" ng-model='cust.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter your zip code' class="form-control" id="inputLocation">
   </div>
 
-<div class="form-group">
-  <label for="inputService">Service needed?</label>
-  <input type="text" ng-model='cust.service' class="form-control" id="inputService" placeholder="Service needed">
-</div>
-
-
+  <div class="form-group">
+    <label for="inputService">Service needed?</label>
+    <input type="text" ng-model='cust.service' class="form-control" id="inputService" placeholder="Service needed">
+  </div>
 
   <button type="submit" class="btn btn-success" value='Save'>Submit</button>
 </form>
