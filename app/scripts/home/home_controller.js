@@ -12,13 +12,13 @@ angular.module('myApp')
 
   ProfileFactory.getAllUsers().success(function(data){
     $scope.users = data.results;
-    console.log(data);
+    //console.log(data);
   });
-console.log($routeParams);
+//console.log($routeParams);
 
   $http.get(PARSE_URI + 'users/' + $routeParams.cat, PARSE_HEADERS).success(function(data){
     $scope.user = data;
-    console.log(data);
+  //  console.log(data);
 });
     // $scope.users =
     // [{name: 'max'},{name: 'john'}];

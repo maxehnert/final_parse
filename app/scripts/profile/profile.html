@@ -55,12 +55,14 @@
   <div class=form-group><a href="http://en.gravatar.com/">No avatar? Click here to get one</a></div>
   <div class="form-group">
     <label for="inputName">Your Name</label>
-    <input type="text" ng-model='cust.name' class="form-control" id="inputName" placeholder="Enter Youy Full Name">
+    <input type="text" ng-model='cust.name' class="form-control" id="inputName" placeholder="Enter Your Full Name">
   </div>
   <div class="form-group">
     <label for="inputEmail1">Email address</label>
     <input type="email" ng-model='cust.email' class="form-control" id="inputEmail1" placeholder="Enter email">
   </div>
+  <input type="text" ng-model='cust.year' class="form-control" id= placeholder="Enter y">
+
   <!-- <div class="form-group">
     <label for="inputMake">Vehicle Make</label>
     <input type="text" ng-model='cust.make' class="form-control" id="inputMake" placeholder="Vehicle">
@@ -70,13 +72,7 @@
     <input type="text" ng-model='cust.model' class="form-control" id="inputModel" placeholder="Model">
   </div> -->
 
-  Makes
-  <!-- <select ng-change="getmodels(makeNiceName)" ng-model="makeNiceName">
-    <option ng-repeat="make in makes" ng-model='cust.make' value="{{make.niceName}}">
-      {{make.name}}
-    </option>
-  </select> -->
-
+  Makes:
   <select ng-change="getmodels(makeNiceName)" ng-model="makeNiceName">
     <option ng-repeat="make in makes" ng-model='cust.make' value="{{make.niceName}}">
       {{make.name}}
@@ -87,8 +83,8 @@
 
   Models:
   <select ng-model="currCar" ng-options="model.name for model in models">
-    <option ng-model='cust.model'></option>
-  </select>
+<!--     <option ng-model='cust.model'></option>
+ -->  </select>
 
 
   {{error2}}
@@ -96,8 +92,8 @@
 
   Years:
 <select ng-model="currYear" ng-options="y.year for y in currCar.years">
-  <option ng-model='cust.year'></option>
-</select>
+<!--   <option ng-model='cust.year'></option>
+ --></select>
   {{error3}}
 
 
@@ -106,6 +102,10 @@
     <input type="text" ng-model='cust.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter your zip code' class="form-control" id="inputLocation">
   </div>
 
+<div class="form-group">
+  <label for="inputService">Service needed?</label>
+  <input type="text" ng-model='cust.service' class="form-control" id="inputService" placeholder="Service needed">
+</div>
 
 
 

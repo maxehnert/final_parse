@@ -11,18 +11,14 @@ body {
 
 .hero-unit {
   margin: 50px auto 0 auto;
-  width: 90%;
+  width: 80%;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
+
   border-radius: 6px;
   padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+
 }
 
 .home-search{
@@ -41,6 +37,30 @@ border-radius: 50%;
 
 .cog{
   font-size: 2em;
+}
+.search{
+  width:30% !important;
+}
+.btn-primary{
+  background-color:HSLA(34, 94%, 50%, 1);
+  border: none;
+  &:hover{
+    background-color:HSLA(31, 100%, 45%, 1)
+    }
+  &:focus{background-color:HSLA(31, 100%, 45%, 1)}
+
+}
+.gravatar{
+  border-radius: 4%;
+}
+.g-my-p{
+  border-radius: 50%;
+}
+.cogimg{
+  margin-top: -2%;
+}
+.logout-link{
+  padding-top:19px !important;
 }
 //
 // Navbars
@@ -150,6 +170,7 @@ border-radius: 50%;
 
 .container,
 .container-fluid {
+  background-color: HSLA(34, 93%, 50%, 1);
   > .navbar-header,
   > .navbar-collapse {
     margin-right: -$navbar-padding-horizontal;
@@ -211,7 +232,7 @@ border-radius: 50%;
   font-size: $font-size-large;
   line-height: $line-height-computed;
   height: $navbar-height;
-
+  font-family: 'PT Sans';
   &:hover,
   &:focus {
     text-decoration: none;

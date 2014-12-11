@@ -5,7 +5,7 @@
 <div ng-show='currentUser.mechanic' class="row" ng-controller='ProfileCtrl'>
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100"></div>
+    <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'></div>
     <div class="col-md-4"></div>
   </div>
   <br>
@@ -24,7 +24,7 @@
 <div ng-show='currentUser.notmechanic' class="row" ng-controller='ProfileCtrl'>
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100"></div>
+    <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'></div>
     <div class="col-md-4"></div>
   </div>
   <br>
@@ -36,5 +36,5 @@
 </div>
 
 <br>
-<a href="#/updateProfile"><button class="btn btn-warning">Update</button></a>
+<a href="#/updateProfile"><button class="btn btn-primary">Update</button></a>
 <a href="#/profile"><button class="btn btn-success">Add Profile</button></a>

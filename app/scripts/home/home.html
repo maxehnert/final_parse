@@ -1,12 +1,12 @@
 
 
-<input ng-model="query" class="form-control" placeholder='Search'>
+<input ng-model="query" class="form-control search" placeholder='Search'>
 <div class="filter">
-  <select ng-model="orderProp" class="form-control">
-    <option value="">Sort By</option>
-    <option value="name">Name</option>
+  <select ng-model="orderProp" class="form-control search">
+<!--     <option value="">Sort By</option>
+ -->    <option value="name">Name</option>
     <option value="location">Location</option>
-    <option value="specialty">Specialty</option>
+    <option value="specialty" selected>Specialty</option>
     <option value="rate">Rate</option>
 
   </select>
@@ -15,10 +15,10 @@
 <div class="row">
 
   <!-- List of Mechanics -->
-  <div ng-repeat="user in users | filter: query | orderBy: orderProp" id="{{ user.objectId }}" class="col-sm-6 col-md-4">
-    <div ng-if="user.mechanic == true" class="thumbnail">
+  <div  ng-if="user.mechanic === true" ng-repeat="user in users | filter: query | orderBy: orderProp" id="{{ user.objectId }}" class="col-sm-6 col-md-4">
+    <div class="thumbnail">
       <!-- <img src="http://www.curefoundation.co.in/conphotogallery/1404818939_shadow2.JPG" height="200" width="200"> -->
-      <img gravatar-src="'{{user.email}}'" gravatar-size="150">
+      <img gravatar-src="'{{user.email}}'" gravatar-size="150" class='gravatar'>
       <div class="caption">
         <h3>{{ user.name }}</h3>
         <p>My service area is: {{ user.location }}</p>
