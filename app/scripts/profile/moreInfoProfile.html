@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4">  <img gravatar-src="'{{user.email}}'" gravatar-size="100"></div>
+    <div class="col-md-4">  <img gravatar-src="'{{user.email}}'" gravatar-size="100" class='gravatar'></div>
     <div class="col-md-4"></div>
   </div>
   <br>
@@ -51,7 +51,7 @@
 
 <div class="row">
   <div class="col-md-4"></div>
-  <div class="col-md-4"><img gravatar-src="'{{user.email}}'" gravatar-size="100"></div>
+  <div class="col-md-4"><img gravatar-src="'{{user.email}}'" gravatar-size="100" class='gravatar'></div>
   <div class="col-md-4"></div>
 </div>
 <br>
@@ -68,6 +68,10 @@
       <tr>
         <td>Model</td>
         <td>{{user.model}}</td>
+      </tr>
+      <tr>
+        <td>Year</td>
+        <td>{{user.year}}</td>
       </tr>
       <tr>
         <td>My Location</td>

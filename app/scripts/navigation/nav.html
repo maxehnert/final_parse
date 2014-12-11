@@ -33,24 +33,3 @@
     </div>
   </div>
 </nav>
-
-
-<nav class="navbar navbar-default navbar-static-bottom" role="navigation">
-  <div class="container">
-  <ul class="nav navbar-nav navbar-right">
-      <li ng-show='currentUsername'>
-
-        <a href="#/myprofile"><img gravatar-src= "'{{currentUseremail}}'" gravatar-size="30"> Hello, {{currentUsername}} </a>
-      </li>
-      <li ng-hide='currentUsername'>
-        <a href="#/register">Register</a>
-      </li>
-      <li ng-hide='currentUsername'>
-        <a href="#/login">Log In</a>
-      </li>
-      <li ng-show='currentUsername'>
-        <a href="#" ng-click="logout()" class='logout-link'>Logout</a>
-      </li>
-    </ul>
-  </div>
-</nav>

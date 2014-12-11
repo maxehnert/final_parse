@@ -16,6 +16,9 @@ var cuser = $cookieStore.get('currentUser');
   }
     // $scope.currentUsername = $cookieStore.get('currentUser').username;
         //console.log($scope.currentUsername);
+$('.cogimg').on('click', function(){
+  $(this).addClass('animated rotateOut');
+});
 
   });
 

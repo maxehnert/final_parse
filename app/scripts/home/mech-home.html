@@ -1,7 +1,7 @@
 <input ng-model="query" class="form-control search" placeholder='Search'>
 <div class="filter">
   <select ng-model="orderProp" class="form-control search">
-    <!-- <option value="">Sort By</option> -->
+    <option value="">Sort By</option>
     <option value="name" selected>Name</option>
     <option value="location">Location</option>
     <option value="make">Make</option>
@@ -21,6 +21,7 @@
       <p>My Location: {{ user.location }}</p>
       <p>Make: {{user.make}}</p>
       <p>Model: {{user.model}}</p>
+      <p>Year: {{user.year}}</p>
       <p>
         <a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
         </a>
