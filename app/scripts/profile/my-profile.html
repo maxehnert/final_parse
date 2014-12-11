@@ -4,37 +4,91 @@
 <!-- Form for Mechanics -->
 <div ng-show='currentUser.mechanic' class="row" ng-controller='ProfileCtrl'>
   <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'></div>
-    <div class="col-md-4"></div>
+
+    <div class="col-md-12"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'></div>
+
   </div>
   <br>
-  <div class="col-xs-6 col-sm-4">Username: {{currentUser.username}}</div>
-  <div class="col-xs-6 col-sm-4">  My Name: {{currentUser.name}}</div>
-  <div class="col-xs-6 col-sm-4">My Specialty: {{currentUser.specialty}}</div>
-  <div class="col-xs-6 col-sm-4">Years of experience: {{currentUser.exp}}</div>
-  <div class="col-xs-6 col-sm-4">Hourly Rate: ${{currentUser.rate}}</div>
-  <div class="col-xs-6 col-sm-4">I will come to you: {{currentUser.travel}}</div>
-  <div class="col-xs-6 col-sm-4">I have my own shop: {{currentUser.shop}}</div>
-  <div class="col-xs-6 col-sm-4">My service area is: {{currentUser.location}}</div>
-  <div class="col-xs-6 col-sm-4"> About me: {{currentUser.bio}}</div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Username</td>
+        <td>{{currentUser.username}}</td>
+      </tr>
+      <tr>
+        <td>My Name</td>
+        <td>{{currentUser.name}}</td>
+      </tr>
+      <tr>
+        <td>My Specialty</td>
+        <td>{{currentUser.specialty}}</td>
+      </tr>
+      <tr>
+        <td>Hourly Rate</td>
+        <td>${{currentUser.rate}}</td>
+      </tr>
+      <tr>
+        <td>I will come to you</td>
+        <td>{{currentUser.travel}}</td>
+      </tr>
+      <tr>
+        <td>I have my own shop</td>
+        <td>{{currentUser.shop}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{currentUser.location}}</td>
+      </tr>
+      <tr>
+        <td>About Me</td>
+        <td>{{currentUser.bio}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+
 
 <!-- Form for Customers -->
 <div ng-show='currentUser.notmechanic' class="row" ng-controller='ProfileCtrl'>
   <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'></div>
-    <div class="col-md-4"></div>
+
+    <div class="col-md-12"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'></div>
+
   </div>
   <br>
-  <div class="col-xs-6 col-sm-4">Username: {{currentUser.username}}</div>
-  <div class="col-xs-6 col-sm-4">My Name: {{currentUser.name}}</div>
-  <div class="col-xs-6 col-sm-4">Make: {{currentUser.make}}</div>
-  <div class="col-xs-6 col-sm-4">Model: {{currentUser.model}}</div>
-  <div class="col-xs-6 col-sm-4">My Location: {{currentUser.location}}</div>
+<table class="table">
+    <tbody>
+      <tr>
+        <td>Username</td>
+        <td>{{currentUser.username}}</td>
+      </tr>
+      <tr>
+        <td>My Name</td>
+        <td>{{currentUser.name}}</td>
+      </tr>
+      <tr>
+        <td>Make</td>
+        <td>{{currentUser.make}}</td>
+      </tr>
+      <tr>
+        <td>Model</td>
+        <td>{{currentUser.model}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{currentUser.location}}</td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
 
 <br>
+<div class="row">
+
+  <div class="col-md-4">
 <a href="#/updateProfile"><button class="btn btn-primary">Update</button></a>
 <a href="#/profile"><button class="btn btn-success">Add Profile</button></a>
+</div>
+</div>
