@@ -201,6 +201,7 @@ angular.module('myApp')
       console.log(currentUser);
     };
 
+//get the vehicle makes
 $http.get('https://api.edmunds.com/api/vehicle/v2/makes?view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
 .then(function (response)
       {
@@ -213,7 +214,7 @@ $http.get('https://api.edmunds.com/api/vehicle/v2/makes?view=basic&fmt=json&api_
 $scope.getmodels = function(makeNiceName) {
 
   console.log(makeNiceName);
-    $http.get('https://api.edmunds.com/api/vehicle/v2/:'+makeNiceName+'/models?view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
+  $http.get('https://api.edmunds.com/api/vehicle/v2/:'+makeNiceName+'/models?view=basic&fmt=json&api_key=cp2qws3s85xm2jehvu3jz3s2')
 .then(function (response)
       {
         console.log(response.data.models);
@@ -307,13 +308,13 @@ angular.module('myApp')
 
   ProfileFactory.getAllUsers().success(function(data){
     $scope.users = data.results;
-    console.log(data);
+    //console.log(data);
   });
-console.log($routeParams);
+//console.log($routeParams);
 
   $http.get(PARSE_URI + 'users/' + $routeParams.cat, PARSE_HEADERS).success(function(data){
     $scope.user = data;
-    console.log(data);
+  //  console.log(data);
 });
     // $scope.users =
     // [{name: 'max'},{name: 'john'}];
