@@ -29,6 +29,11 @@ gulp.task('html', ['styles'], function () {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('ng-templates', function () {
+  return gulp.src('app/scripts/**/*.html')
+    .pipe(gulp.dest('dist/scripts'));
+});
+
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin({
