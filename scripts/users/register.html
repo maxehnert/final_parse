@@ -1,0 +1,21 @@
+<form role="form" ng-submit="register(user)">
+  <div class="form-group">
+    <label>
+      <input type="checkbox" ng-model="user.mechanic" name="optionsCheck" id="optionsCheck1" value="option1">I'm a Mechanic
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      <input type="checkbox" ng-model="user.notmechanic" name="optionsCheck" id="optionsCheck2" value="option2">I'm Looking for a Mechanic
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="inputUsername1">User Name</label>
+    <input type="text" ng-model="user.username" class="form-control" id="inputUsername1"placeholder='Username'>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" ng-model="user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button class="btn btn-primary">Register</button>
+</form>

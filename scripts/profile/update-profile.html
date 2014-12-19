@@ -1,0 +1,101 @@
+
+<div class="page-header">
+  <h2>Update Profile </h2>
+</div>
+
+<!-- Form for Mechanics -->
+<form role="form" ng-show='currentUser.mechanic' ng-submit="profile(currentUser)" ng-controller='ProfileCtrl'>
+  <div class=form-group><a href="http://en.gravatar.com/">No avatar? Click here to get one</a></div>
+  <div class="form-group">
+    <label for="inputName">Your Name </label>
+    <input type="text" ng-model='currentUser.name'   class="form-control" id="inputName" placeholder="Your name" required>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail1">Email address</label>
+    <input type="email" ng-model='currentUser.email' class="form-control" id="inputEmail1" placeholder="Enter email" required>
+  </div>
+  <div class="form-group">
+    <label for="inputSpecialty">Specialty</label>
+    <input type="text" ng-model='currentUser.specialty' class="form-control" id="inputSpecialty" placeholder="Specialty" required>
+  </div>
+  <div class="form-group">
+    <label for="inputExperience">Years of Experience</label>
+    <input type="number" ng-model='currentUser.exp' class="form-control" id="inputExperience" placeholder="Experience" required>
+  </div>
+  <div class="form-group">
+    <label for="inputLocation">Service Area</label>
+    <input type="text" ng-model='currentUser.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter zip code of service area' class="form-control" id="inputLocation" required>
+  </div>
+  <div class="form-group">
+    <label for="inputRate">Hourly Rate</label>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input type="number" ng-model='currentUser.rate' class="form-control" id="inputRate" placeholder="Rate" required>      <span class="input-group-addon">.00</span>
+    </div>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model='currentUser.travel'>Yes I travel
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model='currentUser.shop'>I have my own facilities
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="inputBio">Your Bio</label>
+    <textarea ng-model='currentUser.bio' class="form-control" rows="3" placeholder='Tell your customers about you' required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success" value='Save'>Submit</button>
+</form>
+
+
+<!-- Form for Customers -->
+<form role="form" ng-show='currentUser.notmechanic' ng-submit="profile(currentUser)" ng-controller='ProfileCtrl'>
+  <div class=form-group><a href="http://en.gravatar.com/">No avatar? Click here to get one</a></div>
+  <div class="form-group">
+    <label for="inputName">Your Name </label>
+    <input type="text" ng-model='currentUser.name'   class="form-control" id="inputName" placeholder="Your name" required>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail1">Email address</label>
+    <input type="email" ng-model='currentUser.email' class="form-control" id="inputEmail1" placeholder="Enter email" required>
+  </div>
+<!--   <div class="form-group">
+  <label for="inputMake">Vehicle Make</label>
+  <input type="text" ng-model='currentUser.make' class="form-control" id="inputMake" placeholder="Make" required>
+</div>
+<div class="form-group">
+  <label for="inputModel">Vehicle Model</label>
+  <input type="text" ng-model='currentUser.model' class="form-control" id="inputModel" placeholder="Model" required>
+</div> -->
+Makes:
+<select ng-change="getmodels(makeNiceName)" ng-model="makeNiceName">
+  <option ng-repeat="make in makes" ng-model='cust.make' value="{{make.niceName}}">
+    {{make.name}}
+  </option>
+</select>
+{{error}}
+<br />
+Models:
+<select ng-model="currCar" ng-options="model.name for model in models">
+<!--     <option ng-model='cust.model'></option>
+-->  </select>
+{{error2}}
+<br />
+Years:
+<select ng-model="currYear" ng-options="y.year for y in currCar.years">
+<!--   <option ng-model='cust.year'></option>
+--></select>
+{{error3}}
+  <div class="form-group">
+    <label for="inputLocation">My Location</label>
+    <input type="text" ng-model='currentUser.location' pattern="[0-9]{5}" maxlength='5' placeholder='enter your zip code' class="form-control" id="inputLocation" required>
+  </div>
+  <div class="form-group">
+    <label for="inputService">Service needed?</label>
+    <input type="text" ng-model='currentUser.service' class="form-control" id="inputService" placeholder="Service needed">
+  </div>
+  <button type="submit" class="btn btn-success" value='Save'>Submit</button>
+</form>

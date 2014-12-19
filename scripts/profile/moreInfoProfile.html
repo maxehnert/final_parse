@@ -1,0 +1,93 @@
+<div ng-show="user.mechanic" ng-controller='HomeCtrl' id="{{user.objectId}}">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">  <img gravatar-src="'{{user.email}}'" gravatar-size="100" class='gravatar'></div>
+    <div class="col-md-4"></div>
+  </div>
+  <br>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>My Name</td>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <td>My Specialty</td>
+        <td>{{user.specialty}}</td>
+      </tr>
+      <tr>
+        <td>Years of Experience</td>
+        <td>{{user.exp}}</td>
+      </tr>
+      <tr>
+        <td>Hourly Rate</td>
+        <td>${{user.rate}}</td>
+      </tr>
+      <tr>
+        <td>I will come to you</td>
+        <td>{{user.travel}}</td>
+      </tr>
+      <tr>
+        <td>I have my own shop</td>
+        <td>{{user.shop}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{user.location}}</td>
+      </tr>
+      <tr>
+        <td>About Me</td>
+        <td>{{user.bio}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+
+
+<!-- Customers More Info Page -->
+<div ng-hide="user.mechanic" ng-controller='HomeCtrl' id="{{user.objectId}}">
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"><img gravatar-src="'{{user.email}}'" gravatar-size="100" class='gravatar'></div>
+  <div class="col-md-4"></div>
+</div>
+<br>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>My Name</td>
+        <td>{{user.name}}</td>
+      </tr>
+      <tr>
+        <td>Make</td>
+        <td>{{user.make}}</td>
+      </tr>
+      <tr>
+        <td>Model</td>
+        <td>{{user.model}}</td>
+      </tr>
+      <tr>
+        <td>Year</td>
+        <td>{{user.year}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{user.location}}</td>
+      </tr>
+      <tr>
+        <td>Service Requested</td>
+        <td>{{user.service}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
+    </a>
+  </div>
+</div>
+</div>

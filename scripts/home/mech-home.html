@@ -1,0 +1,35 @@
+<input ng-model="query" class="form-control search" placeholder='Search'>
+<div class="filter">
+  <select ng-model="orderProp" class="form-control search">
+    <option value="">Sort By</option>
+    <option value="name" selected>Name</option>
+    <option value="location">Location</option>
+    <option value="make">Make</option>
+    <option value="model">Model</option>
+
+  </select>
+</div><br>
+
+<div class="row">
+
+<!-- List of Customers -->
+<div ng-if="user.notmechanic === true " ng-repeat="user in users | filter: query | orderBy: orderProp" id="{{ user.objectId }}" class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <img gravatar-src="'{{user.email}}'" gravatar-size="150" class='gravatar'>
+    <div class="caption">
+      <h3>{{ user.name }}</h3>
+      <p>My Location: {{ user.location }}</p>
+      <p>Make: {{user.make}}</p>
+      <p>Model: {{user.model}}</p>
+      <p>Year: {{user.year}}</p>
+      <p>
+        <a href="mailto:{{ user.email }}?Subject=Hello%20I%20would%20like%20to%20request%20your%20service" class="btn btn-primary" role="button">Contact Me
+        </a>
+        <a href="#/userprofile/{{user.objectId}}" class="btn btn-default" role="button">View Profile</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+</div>
