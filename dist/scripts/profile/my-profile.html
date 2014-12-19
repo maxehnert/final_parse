@@ -1,0 +1,97 @@
+<div class="page-header">
+  <h2>My Profile </h2>
+</div>
+<!-- Form for Mechanics -->
+<div ng-show='currentUser.mechanic' class="row" ng-controller='ProfileCtrl'>
+  <div class="row">
+    <div class="col-md-12"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'>
+    </div>
+  </div>
+  <br>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Username</td>
+        <td>{{currentUser.username}}</td>
+      </tr>
+      <tr>
+        <td>My Name</td>
+        <td>{{currentUser.name}}</td>
+      </tr>
+      <tr>
+        <td>My Specialty</td>
+        <td>{{currentUser.specialty}}</td>
+      </tr>
+      <tr>
+        <td>Hourly Rate</td>
+        <td>${{currentUser.rate}}</td>
+      </tr>
+      <tr>
+        <td>I will come to you</td>
+        <td>{{currentUser.travel}}</td>
+      </tr>
+      <tr>
+        <td>I have my own shop</td>
+        <td>{{currentUser.shop}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{currentUser.location}}</td>
+      </tr>
+      <tr>
+        <td>About Me</td>
+        <td>{{currentUser.bio}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Form for Customers -->
+<div ng-show='currentUser.notmechanic' class="row" ng-controller='ProfileCtrl'>
+  <div class="row">
+    <div class="col-md-12"><img gravatar-src="'{{currentUser.email}}'" gravatar-size="100" class='gravatar g-my-p'>
+    </div>
+  </div>
+  <br>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Username</td>
+        <td>{{currentUser.username}}</td>
+      </tr>
+      <tr>
+        <td>My Name</td>
+        <td>{{currentUser.name}}</td>
+      </tr>
+      <tr>
+        <td>Make</td>
+        <td>{{currentUser.make}}</td>
+      </tr>
+      <tr>
+        <td>Model</td>
+        <td>{{currentUser.model}}</td>
+      </tr>
+      <tr>
+        <td>Year</td>
+        <td>{{currentUser.year}}</td>
+      </tr>
+      <tr>
+        <td>My Location</td>
+        <td>{{currentUser.location}}</td>
+      </tr>
+      <tr>
+        <td>Service Needed</td>
+        <td>{{currentUser.service}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-4">
+<a href="#/updateProfile"><button class="btn btn-primary">Update</button></a>
+<a href="#/profile"><button class="btn btn-success">Add Profile</button></a>
+</div>
+</div>
