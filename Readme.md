@@ -1,8 +1,19 @@
 ## Mechanic Finder App
 
-This is my final project for The Iron Yard
-In this app you can add add/or find mechanics in your area
+![alt tag](https://raw.github.com/maxehnert/final_parse/app/images/MechanicFinder.png)
 
-To run this:
+### Application for making independent mechanics easier to find
 
-install npm and bower
+This was built using Angular, jQuery, Sass, Bootstrap, Gulp, Bower
+
+### Installation Instructions
+
+`git clone [link]`
+
+`cd final_parse`
+
+`npm install`
+
+`bower install`
+
+`gulp watch` This will open a localhost page at port 9000 in your browser.
